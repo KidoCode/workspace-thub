@@ -18,4 +18,4 @@ jobs:
         curl https://jsonplaceholder.typicode.com/todos/1
         echo "Done\n"
         ls
-        node script.js
+        node .github/workflows/script.js

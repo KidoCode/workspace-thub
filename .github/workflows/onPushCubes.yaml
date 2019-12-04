@@ -1,0 +1,15 @@
+name: Verifying workflow
+on:
+  push:
+    paths:    
+      - 'cubes/*.cube.json'         
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: request for new repo
+      run: |
+        echo "Send request"
+        curl https://jsonplaceholder.typicode.com/todos/1
+        echo "Done"

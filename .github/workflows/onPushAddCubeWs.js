@@ -8,8 +8,8 @@ function stop(e) {
 
 const run = async () => {
     console.log("process cwd: ", process.cwd());
-    const cube = fs.readFileSync(`./cubes/now`, 'utf8');
-    const userInfo = JSON.parse(fs.readFileSync(`./.cubie/cube.json`, 'utf8')).user;
+    const cube = fs.readFileSync(process.cwd() + `/cubes/now`, 'utf8');
+    const userInfo = JSON.parse(fs.readFileSync(process.cwd() + `/.cubie/cube.json`, 'utf8')).user;
     console.log("cube name: ", cube);
     console.log("username: ", userInfo.username);
     try {

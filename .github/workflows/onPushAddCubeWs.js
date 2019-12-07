@@ -12,13 +12,23 @@ const run = async () => {
     console.log("cube name: ", cube);
     console.log("username: ", userInfo.username);
     try {
-        await axios.post(
+        let r1 = await axios.post(
             'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/kportal-grmuv/service/kportalWeb/incoming_webhook/addCube?secret=secret',
             {
                 "username": userInfo.username,
                 "repo": cube
             }
         );
+        if(r1.data.result){
+            let r2 = await axios.post(
+                'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/kportal-grmuv/service/kportalWeb/incoming_webhook/createChubCubeFile?secret=secret',
+                {
+                    "username": userInfo.username,
+                    "repo": cube
+                }
+            );
+            console.log(r2.data.result);
+        }
     } catch (e) {
         stop(e)
     }

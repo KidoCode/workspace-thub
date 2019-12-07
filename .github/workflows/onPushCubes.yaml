@@ -28,4 +28,4 @@ jobs:
         CI: true          
     - name: request for new repo
       run: |
-        node .github/workflows/script.js
+        node .github/workflows/onPushAddCubeWs.js

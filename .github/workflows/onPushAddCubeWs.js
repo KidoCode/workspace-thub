@@ -20,7 +20,7 @@ const run = async () => {
             }
         );
         if(r1.data.result){
-            setTimeout(() => {
+            setTimeout(async () => {
                 let r2 = await axios.post(
                     'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/kportal-grmuv/service/kportalWeb/incoming_webhook/createChubCubeFile?secret=secret',
                     {

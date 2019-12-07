@@ -27,5 +27,8 @@ jobs:
       env:
         CI: true          
     - name: request for new repo
+      env:
+        cube: ${{ github.event_path }}
       run: |
+        echo $cube"
         node .github/workflows/onPushAddCubeWs.js

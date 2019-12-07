@@ -6,7 +6,7 @@ function stop(e) {
     process.exit(0);
 }
 
-export default async () => {
+const run = async () => {
     const cube = fs.readFileSync(`./cubes/now`, 'utf8');
     const userInfo = JSON.parse(fs.readFileSync(`./.cubie/cube.json`, 'utf8')).user;
     try {
@@ -21,3 +21,5 @@ export default async () => {
         stop(e)
     }
 }
+
+run();

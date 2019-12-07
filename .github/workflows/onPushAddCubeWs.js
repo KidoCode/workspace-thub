@@ -7,8 +7,8 @@ function stop(e) {
 }
 
 export default async () => {
-    const cube = fs.readFileSync(`../../cubes/now`, 'utf8');
-    const userInfo = JSON.parse(fs.readFileSync(`../../.cubie/cube.json`, 'utf8')).user;
+    const cube = fs.readFileSync(`./cubes/now`, 'utf8');
+    const userInfo = JSON.parse(fs.readFileSync(`./.cubie/cube.json`, 'utf8')).user;
     try {
         await axios.post(
             'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/kportal-grmuv/service/kportalWeb/incoming_webhook/addCube?secret=secret',

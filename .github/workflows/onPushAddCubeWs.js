@@ -20,14 +20,16 @@ const run = async () => {
             }
         );
         if(r1.data.result){
-            let r2 = await axios.post(
-                'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/kportal-grmuv/service/kportalWeb/incoming_webhook/createChubCubeFile?secret=secret',
-                {
-                    "username": userInfo.username,
-                    "repo": cube
-                }
-            );
-            console.log(r2.data.result);
+            setTimeout(() => {
+                let r2 = await axios.post(
+                    'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/kportal-grmuv/service/kportalWeb/incoming_webhook/createChubCubeFile?secret=secret',
+                    {
+                        "username": userInfo.username,
+                        "repo": cube
+                    }
+                );
+                console.log(r2.data.result);
+            }, 6000)
         }
     } catch (e) {
         stop(e)
